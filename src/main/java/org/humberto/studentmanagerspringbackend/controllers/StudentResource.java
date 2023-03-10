@@ -1,6 +1,5 @@
 package org.humberto.studentmanagerspringbackend.controllers;
 
-import org.humberto.studentmanagerspringbackend.exceptions.UserNotFoundException;
 import org.humberto.studentmanagerspringbackend.model.Student;
 import org.humberto.studentmanagerspringbackend.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
+@CrossOrigin(origins = "http://localhost:4200")
 public class StudentResource {
 
     //attributes
