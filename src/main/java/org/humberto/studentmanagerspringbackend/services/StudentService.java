@@ -5,6 +5,8 @@ import org.humberto.studentmanagerspringbackend.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service        //indicates to Spring Beans Container that this class is a Service
@@ -31,5 +33,30 @@ public class StudentService {
 
         //insert the student
         return this.studentRepository.save(student);
+    }
+
+    public List<Student> findAllStudents() {
+
+        return this.studentRepository.findAll();
+    }
+
+    public Student updateStudent(Student student) {
+
+        return this.studentRepository.save(student);
+    }
+
+    public void deleteStudent(Long id) {
+
+        this.studentRepository.deleteById(id);
+    }
+
+    public Optional<Student> findStudentById(Long id){
+
+        return this.studentRepository.findById(id).orElseThrow(
+                () -> {
+                    new UserNotFoundException( "User by id " + id + "was not found");
+                    return null;
+                }
+        );
     }
 }
