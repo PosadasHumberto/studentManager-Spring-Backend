@@ -1,5 +1,6 @@
 package org.humberto.studentmanagerspringbackend.services;
 
+import org.humberto.studentmanagerspringbackend.exceptions.UserNotFoundException;
 import org.humberto.studentmanagerspringbackend.model.Student;
 import org.humberto.studentmanagerspringbackend.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,7 @@ public class StudentService {
         this.studentRepository.deleteById(id);
     }
 
-    public Optional<Student> findStudentById(Long id){
+    public Student findStudentById(Long id){
 
         return this.studentRepository.findById(id).orElseThrow(
                 () -> {
