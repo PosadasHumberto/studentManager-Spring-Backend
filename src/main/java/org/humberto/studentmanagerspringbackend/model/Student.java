@@ -21,7 +21,7 @@ public class Student implements Serializable {
     @Column(nullable = false, updatable = false)
     private String studentCode;
 
-    //constructor
+    //constructors
     public Student() {
     }
 
