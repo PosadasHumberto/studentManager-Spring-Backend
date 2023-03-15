@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
-@CrossOrigin(origins = "https://student-manager-frontend.web.app/")
+@CrossOrigin(origins = "https://student-manager-frontend-61c42.web.app/")
 public class StudentResource {
 
     //attributes
