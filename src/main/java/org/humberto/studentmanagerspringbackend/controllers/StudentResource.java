@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://student-manager-frontend.web.app/")
 public class StudentResource {
 
     //attributes
@@ -50,7 +50,7 @@ public class StudentResource {
         );
     }
 
-    @PutMapping("update/{id}")
+    @PutMapping("/update")
     public ResponseEntity<Student> updateStudent(@RequestBody Student student) {
 
         return new ResponseEntity<>(
